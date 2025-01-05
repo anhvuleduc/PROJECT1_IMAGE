@@ -24,4 +24,6 @@ pip install -r requirements.txt
 
 - Also, it cell can has its own surrounding environment, resulting in different path loss exponent (coefficient)
 
-## 
+## Future work
+
+- Using a more realistic formula to generate images
