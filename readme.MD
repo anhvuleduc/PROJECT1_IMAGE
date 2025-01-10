@@ -24,4 +24,19 @@ pip install -r requirements.txt
 
 - Also, it cell can has its own surrounding environment, resulting in different path loss exponent (coefficient)
 
-## 
+## Training
+- We train the CNN model to predict $ \Delta_{lat}, \Delta_{lon}$ from each data instance's image. These values are added to the centroid coordinates to produce the predicted location.
+- The training is conducted on an NVIDIA RTX 4090 GPU for 10 epochs. You can find the checkpoint [here]
+- Model architecture:
+
+![alt text](assets/model_architecture.png)
+
+- To train the model from scratch, use:
+```
+python3 train.py --data_path path_to_CSV --batch_size 32 --lr 0.001 --epochs 10 --checkpoint_path your_model.pth
+```
+## Testing
+- Inference using specific index:
+```
+python3 infer.py --data_path pathtoCSV --ckpt pathtockpt --idx youridx
+```
