@@ -25,7 +25,7 @@ pip install -r requirements.txt
 - Also, it cell can has its own surrounding environment, resulting in different path loss exponent (coefficient)
 
 ## Training
-- We train the CNN model to predict $ \Delta_{lat}, \Delta_{lon}$ from each data instance's image. These values are added to the centroid coordinates to produce the predicted location.
+- We train the CNN model to predict $\Delta_{lat}, \Delta_{lon}$ from each data instance's image. These values are added to the centroid coordinates to produce the predicted location.
 - The training is conducted on an NVIDIA RTX 4090 GPU for 10 epochs. You can find the checkpoint [here]
 - Model architecture:
 
