@@ -40,3 +40,7 @@ python3 train.py --data_path path_to_CSV --batch_size 32 --lr 0.001 --epochs 10 
 ```
 python3 infer.py --data_path pathtoCSV --ckpt pathtockpt --idx youridx
 ```
+=======
+## Future work
+
+- Using a more realistic formula to generate images
