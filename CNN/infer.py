@@ -5,7 +5,7 @@ import torch
 from torch.utils.data import DataLoader
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--data_path", type=str, default="logFile_urban_data.csv", help="Path to the CSV file")
+parser.add_argument("--data_path", type=str, default="../assets/logFile_urban_data.csv", help="Path to the CSV file")
 parser.add_argument("--batch_size", type=int, default=1, help="Batch size for testing")
 parser.add_argument("--ckpt", type=str, default="urban_model.pth", help="Path to the model checkpoint")
 parser.add_argument("--idx", type=int, required=True, help="Index of the data point in CSV file to infer")
