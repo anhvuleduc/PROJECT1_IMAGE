@@ -20,7 +20,8 @@ pip install -r requirements.txt
 ### assets: Reference materials & data
 - cell_image.docx: original idea of representing the image
 - IJAHUC_localization_manuscript_submit.pdf: original paper
-- logFile_urban_data.csv: Actual cells' RSSI data
+- logFile_urban_data.csv: Actual cells' RSSI data, each row is: 
+   - data_id, lat_ref,lon_ref, time, number of cells, (lac,cid,cell_lat,cell_lon,rssi), ...
 
 
 ### CNN: Code for CNN
@@ -37,17 +38,15 @@ pip install -r requirements.txt
 ### show_image.ipynb
 - visualize the data image for a specifix data row in csv file
 
-## CSV file data format
-- Data file is logFile_urban_data.csv
-- Data format: Each row is: 
-   - data_id, lat_ref,lon_ref, time, number of cells, (lac,cid,cell_lat,cell_lon,rssi), ...
 
-## Path loss formula
+## Methodology
+
+### Path loss formula
 - The attenuation of mobile signal can be modeled using the Log-Distance Path Loss Model:  ![Alttext](./assets/PathLoss.png)
 
 - Also, it cell can has its own surrounding environment, resulting in different path loss exponent (coefficient)
 
-## Training
+### Training
 - We train the CNN model to predict $\Delta_{lat}, \Delta_{lon}$ from each data instance's image. These values are added to the centroid coordinates to produce the predicted location.
 - The training is conducted on an NVIDIA RTX 4090 GPU for 10 epochs. You can find the checkpoint [here]
 - Model architecture:
@@ -64,7 +63,7 @@ pip install -r requirements.txt
       python3 train.py [--data_path PATH_TO_CSV] [--batch_size BATCH_SIZE] [--lr LEARNING_RATE] [--epochs EPOCHS] [--checkpoint_path PATH_TO_STORE_MODEL]
       ```
 
-## Testing
+### Testing
 - Inference using specific row index
 - To test the model, use:
    - Move to CNN directory
